@@ -1,4 +1,4 @@
-subprojects=(quickstart ssh-key-manager vagrant)
+subprojects=(quickstart ssh_key_manager vagrant)
 
 uninstall(){
 for p in ${subprojects[@]}; do
@@ -8,9 +8,10 @@ done
 
 build(){
 for p in ${subprojects[@]}; do
-echo "building $p"
 cd $p
+echo "Building $p"
 python3 -m build
+echo "Build Complete..."
 cd -
 done
 }
@@ -25,5 +26,5 @@ done
 }
 
 build
-development_mode_install
+#development_mode_install
 #uninstall
